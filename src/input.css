@@ -1,0 +1,76 @@
+/* Font */
+/* Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobileNavLink {
+  @apply font-poppins text-3xl text-white duration-150 ease-in hover:text-slate-400;
+}
+
+.buttonBiasa {
+  @apply items-center justify-center rounded-2xl border border-textPrimaryColor bg-none px-4 py-2 font-poppins font-medium text-textPrimaryColor;
+}
+
+.buttonLogin {
+  @apply items-center justify-center px-4 py-2 font-poppins font-medium text-white;
+}
+
+.buttonNav {
+  @apply items-center justify-center px-4 py-2 font-poppins font-medium;
+}
+.buttonAccent {
+  @apply items-center justify-center rounded-2xl bg-accentColor px-4 py-2 font-poppins font-medium text-textPrimaryColor;
+}
+
+.paragraf {
+  @apply font-inter text-lg font-normal lg:text-2xl;
+}
+
+.section {
+  @apply px-5 py-24 md:px-24;
+}
+
+.sectionTitle {
+  @apply text-4xl font-semibold text-textPrimaryColor lg:text-4xl;
+}
+
+.subtitle {
+  @apply lg:text-2xl;
+}
+
+.aboutBox {
+  @apply flex flex-col gap-3 rounded-2xl border-[0.2px] border-textPrimaryColor bg-secondaryColor p-4 font-poppins text-textPrimaryColor;
+}
+
+.propertyCard {
+  @apply flex flex-col gap-4 rounded-2xl border-[0.2px] border-black bg-white p-4;
+}
+
+.programBox {
+  @apply hover:bg-secondaryColorHover flex flex-col items-center justify-center gap-3 rounded-2xl border border-secondaryColor bg-secondaryColor p-4 text-center font-poppins duration-150 ease-in-out hover:border-textPrimaryColor;
+}
+
+.buttonProgramBox {
+  @apply border-textSecondaryColor text-textSecondaryColor items-center justify-center rounded-2xl border bg-none px-4 py-2 font-poppins font-medium duration-150 ease-out;
+}
+
+.trainerBox {
+  @apply rounded-3xl bg-secondaryColor;
+}
+
+.trainerImage {
+  @apply absolute h-full w-full rounded-t-3xl object-cover;
+}
+
+.layerHitam {
+  @apply absolute z-10 h-full w-full rounded-3xl bg-black opacity-40;
+}
+
+.footer {
+  @apply px-5 py-10 md:px-16;
+}

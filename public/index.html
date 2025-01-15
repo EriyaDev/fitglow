@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitGlow</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="w-full overflow-x-hidden scroll-smooth bg-primaryColor">
+    <header class="w-full">
+      <nav
+        class="navBar fixed z-10 flex w-full items-center justify-between bg-primaryColor px-3 py-3 duration-300 lg:absolute lg:justify-between lg:px-24 lg:py-4"
+      >
+        <div class="logo">
+          <!-- <img src="assets/image/logo.png" alt="logo-skyline" /> -->
+          <img src="assets/image/logo.svg" alt="logo" class="h-9" />
+        </div>
+
+        <div class="flex items-center gap-7">
+          <ul
+            class="hidden gap-7 font-poppins font-medium text-textPrimaryColor lg:flex"
+          >
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Program</a></li>
+            <li><a href="">Trainer</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Review</a></li>
+          </ul>
+        </div>
+
+        <div class="btn">
+          <button
+            class="buttonNav hidden rounded-2xl bg-accentColor text-textPrimaryColor lg:flex"
+          >
+            Get 7 Days <span class="px-1 underline">Free</span> Trial
+          </button>
+        </div>
+
+        <button onclick="tampilkanNav()" id="hamburger" class="flex lg:hidden">
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+          >
+            <path
+              fill="none"
+              stroke="#FFFFFF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 8h22M5 16h22M5 24h22"
+            />
+          </svg> -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+          >
+            <path
+              fill="none"
+              stroke="#FEFEFE"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 8h22M5 16h22M5 24h22"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <div
+        id="navMobile"
+        class="navMobile fixed right-0 z-50 flex h-screen w-[70%] translate-x-full items-center justify-center bg-secondaryColor opacity-100 transition duration-1000 ease-in-out"
+      >
+        <ul class="flex flex-col items-start justify-center gap-5">
+          <li>
+            <a onclick="hilangkanNav()" class="mobileNavLink" href="">Home</a>
+          </li>
+          <li>
+            <a onclick="hilangkanNav()" class="mobileNavLink" href="">About</a>
+          </li>
+          <li>
+            <a onclick="hilangkanNav()" class="mobileNavLink" href=""
+              >Program</a
+            >
+          </li>
+          <li>
+            <a onclick="hilangkanNav()" class="mobileNavLink" href=""
+              >Trainer</a
+            >
+          </li>
+          <li>
+            <a onclick="hilangkanNav()" class="mobileNavLink" href=""
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a onclick="hilangkanNav()" class="mobileNavLink" href="">Review</a>
+          </li>
+          <li class="flex gap-3">
+            <button class="buttonAccent">
+              Get 7 Days <span class="px-1 underline">Free</span> Trial
+            </button>
+          </li>
+
+          <li>
+            <button onclick="hilangkanNav()" id="close">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#f7f7f7"
+                  d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main class="w-full">
+      <section
+        id="heroSection"
+        class="section relative flex h-screen w-full items-center justify-center font-poppins"
+      >
+        <div class="grid h-screen grid-cols-1 lg:grid-cols-[40%_60%]">
+          <!-- Tulisan -->
+          <div class="flex flex-col items-start justify-center gap-5 lg:gap-10">
+            <!-- Title -->
+            <div class="font-poppins font-semibold text-textPrimaryColor">
+              <h4>BEST PLACE FOR</h4>
+              <h1 class="text-5xl lg:text-6xl">
+                Reach Your <span class="text-accentColor">Body Goals</span> at
+                Fitglow
+              </h1>
+            </div>
+            <!-- Subtitle -->
+            <p class="text-textPrimaryColor lg:text-lg">
+              We believe that the potential to achieve desired health and
+              wellness goals lies within everyone.
+            </p>
+            <!-- Button -->
+            <div class="flex flex-row gap-3">
+              <button class="buttonAccent font-semibold">Join Now</button>
+              <button class="buttonBiasa flex flex-row gap-1 font-semibold">
+                <!-- Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 48 48"
+                >
+                  <defs>
+                    <mask id="ipSPlay0">
+                      <g fill="none" stroke-linejoin="round" stroke-width="4">
+                        <path
+                          fill="#fff"
+                          stroke="#fff"
+                          d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4S4 12.954 4 24s8.954 20 20 20Z"
+                        />
+                        <path
+                          fill="#000"
+                          stroke="#000"
+                          d="M20 24v-6.928l6 3.464L32 24l-6 3.464l-6 3.464z"
+                        />
+                      </g>
+                    </mask>
+                  </defs>
+                  <path
+                    fill="currentColor"
+                    d="M0 0h48v48H0z"
+                    mask="url(#ipSPlay0)"
+                  />
+                </svg>
+                Watch Video
+              </button>
+            </div>
+          </div>
+          <!-- Gambar -->
+          <div class="hidden items-end justify-end lg:flex">
+            <img
+              src="assets/image/hero.webp"
+              alt=""
+              class="h-[90%] w-[90%] object-contain object-center"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section font-poppins">
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Judul -->
+          <div class="flex flex-col gap-3 text-center">
+            <h1 class="sectionTitle">We Are Here To Give You The Best</h1>
+            <p class="text-textPrimaryColor lg:text-lg">
+              FitGlow offers a complete solution for your fitness. We are ready
+              to help you achieve your ideal body and healthy lifestyle.
+            </p>
+          </div>
+          <!-- Content -->
+          <div class="grid grid-cols-1 gap-3 lg:grid-cols-[66%_33%]">
+            <!-- About -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="aboutBox">
+                <!-- Judul -->
+                <div class="flex flex-row items-center justify-start gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"
+                    />
+                  </svg>
+                  <h3 class="text-lg font-medium lg:text-2xl">
+                    Modern Facilities
+                  </h3>
+                </div>
+                <p class="lg:text-lg">
+                  Equipped with the latest fitness equipment, a large training
+                  area that supports various types of exercises.
+                </p>
+              </div>
+              <div class="aboutBox">
+                <!-- Judul -->
+                <div class="flex flex-row items-center justify-start gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"
+                    />
+                  </svg>
+                  <h3 class="text-lg font-medium lg:text-2xl">
+                    Modern Facilities
+                  </h3>
+                </div>
+                <p class="lg:text-lg">
+                  Equipped with the latest fitness equipment, a large training
+                  area that supports various types of exercises.
+                </p>
+              </div>
+              <div class="aboutBox">
+                <!-- Judul -->
+                <div class="flex flex-row items-center justify-start gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"
+                    />
+                  </svg>
+                  <h3 class="text-lg font-medium lg:text-2xl">
+                    Modern Facilities
+                  </h3>
+                </div>
+                <p class="lg:text-lg">
+                  Equipped with the latest fitness equipment, a large training
+                  area that supports various types of exercises.
+                </p>
+              </div>
+              <div class="aboutBox">
+                <!-- Judul -->
+                <div class="flex flex-row items-center justify-start gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8z"
+                    />
+                  </svg>
+                  <h3 class="text-lg font-medium lg:text-2xl">
+                    Modern Facilities
+                  </h3>
+                </div>
+                <p class="lg:text-lg">
+                  Equipped with the latest fitness equipment, a large training
+                  area that supports various types of exercises.
+                </p>
+              </div>
+            </div>
+            <!-- Image -->
+            <div class="aspect-square lg:h-full lg:w-full">
+              <img
+                src="assets/image/about/about.webp"
+                alt=""
+                class="h-full w-full rounded-2xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="program" class="section font-poppins">
+        <div class="flex flex-col gap-10">
+          <!-- Judul -->
+          <div class="flex flex-col gap-3 text-center">
+            <h1 class="sectionTitle">Programs Provided For You</h1>
+            <p class="text-textPrimaryColor lg:text-lg">
+              FitGlow programs are designed for all levels, from yoga, strength
+              training, to cardio. Enjoy a personalized approach to achieving
+              your fitness goals.
+            </p>
+          </div>
+          <!-- Content -->
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <div class="programBox group">
+              <!-- Icon -->
+              <div>
+                <div
+                  class="w-fit rounded-full bg-accentColor p-2 text-textPrimaryColor"
+                >
+                  <!-- svg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M29 10a5 5 0 1 1-10 0a5 5 0 0 1 10 0m2 33a1 1 0 0 1-1 1H12.856a2.856 2.856 0 0 1-1.507-5.282l5.284-3.282a3 3 0 0 0 1.417-2.548V32h2.374a4 4 0 0 0 2.828-1.172l.748-.747l.747.747A4 4 0 0 0 27.577 32H30v.892a3 3 0 0 0 1.41 2.543l5.246 3.279A2.86 2.86 0 0 1 35.14 44h-2.31c.11-.313.17-.65.17-1v-.25a3 3 0 0 0-2.602-2.973l-13.215-1.768a1 1 0 0 0-.266 1.982l13.216 1.768a1 1 0 0 1 .867.991zm-4.838-13.586L25 28.252V24.51q.224.129.414.318l1.879 1.88A1 1 0 0 0 28 27h3a1 1 0 0 0 .894-1.447l-1-2a1 1 0 1 0-1.788.894l.276.553h-.968l-1.586-1.586a4 4 0 0 0-5.656 0L19.586 25h-.968l.276-.553a1 1 0 1 0-1.788-.894l-1 2A1 1 0 0 0 17 27h3a1 1 0 0 0 .707-.293l1.879-1.879q.191-.189.414-.318v3.742l-1.162 1.162a2 2 0 0 1-1.414.586h-6.038a2 2 0 0 1-1.864-2.725l3.004-7.725A4 4 0 0 1 19.254 17h9.492a4 4 0 0 1 3.728 2.55l3.005 7.725A2 2 0 0 1 33.613 30h-6.038a2 2 0 0 1-1.414-.586"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 text-textPrimaryColor">
+                <!-- Title -->
+                <h3 class="text-xl font-medium">Basic Yoga</h3>
+                <!-- Desc -->
+                <p>Yoga helps increase calmness with simple movements.</p>
+              </div>
+              <!-- Button -->
+              <button
+                class="buttonProgramBox group-hover:rounded-full group-hover:font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+            <div class="programBox group">
+              <!-- Icon -->
+              <div>
+                <div
+                  class="w-fit rounded-full bg-accentColor p-2 text-textPrimaryColor"
+                >
+                  <!-- svg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M3 18.34S4 7.09 7 3l5 1l-1 3.09H9v7.16h1c2-3.07 6.14-4.19 8.64-3.07c3.3 1.53 3 6.14 0 8.18C16.24 21 9 22.43 3 18.34"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 text-textPrimaryColor">
+                <!-- Title -->
+                <h3 class="text-xl font-medium">Body Building</h3>
+                <!-- Desc -->
+                <p>
+                  Designed to build muscle and create ideal body proportions.
+                </p>
+              </div>
+              <!-- Button -->
+              <button
+                class="buttonProgramBox group-hover:rounded-full group-hover:font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+            <div class="programBox group">
+              <!-- Icon -->
+              <div>
+                <div
+                  class="w-fit rounded-full bg-accentColor p-2 text-textPrimaryColor"
+                >
+                  <!-- svg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M20.57 14.86L22 13.43L20.57 12L17 15.57L8.43 7L12 3.43L10.57 2L9.14 3.43L7.71 2L5.57 4.14L4.14 2.71L2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57L3.43 12L7 8.43L15.57 17L12 20.57L13.43 22l1.43-1.43L16.29 22l2.14-2.14l1.43 1.43l1.43-1.43l-1.43-1.43L22 16.29z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 text-textPrimaryColor">
+                <!-- Title -->
+                <h3 class="text-xl font-medium">Fitness Training</h3>
+                <!-- Desc -->
+                <p>
+                  Our fitness program improves stamina, overall body health.
+                </p>
+              </div>
+              <!-- Button -->
+              <button
+                class="buttonProgramBox group-hover:rounded-full group-hover:font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+            <div class="programBox group">
+              <!-- Icon -->
+              <div>
+                <div
+                  class="w-fit rounded-full bg-accentColor p-2 text-textPrimaryColor"
+                >
+                  <!-- svg -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M16.5 5.5a2 2 0 0 0 2-2a2 2 0 0 0-2-2a2 2 0 0 0-2 2a2 2 0 0 0 2 2m-3.6 13.9l1-4.4l2.1 2v6h2v-7.5l-2.1-2l.6-3A7.3 7.3 0 0 0 22 13v-2c-1.76.03-3.4-.89-4.3-2.4l-1-1.6c-.36-.6-1-1-1.7-1c-.3 0-.5.1-.8.1L9 8.3V13h2V9.6l1.8-.7l-1.6 8.1l-4.9-1l-.4 2zM4 9a1 1 0 0 1-1-1a1 1 0 0 1 1-1h3v2zm1-4a1 1 0 0 1-1-1a1 1 0 0 1 1-1h5v2zm-2 8a1 1 0 0 1-1-1a1 1 0 0 1 1-1h4v2z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 text-textPrimaryColor">
+                <!-- Title -->
+                <h3 class="text-xl font-medium">Running</h3>
+                <!-- Desc -->
+                <p>Exercise that improves heart health, burns calories.</p>
+              </div>
+              <!-- Button -->
+              <button
+                class="buttonProgramBox group-hover:rounded-full group-hover:font-semibold"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="trainer"
+        class="section grid grid-cols-1 gap-10 font-poppins"
+      >
+        <!-- Judul -->
+        <div class="flex flex-col gap-3 text-center">
+          <h1 class="sectionTitle">Our Trainers</h1>
+          <p class="text-textPrimaryColor lg:text-lg">
+            We provide specialized sports training for athletes to get in the
+            best shape of their lives.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+          <div class="trainerBox">
+            <div class="relative h-[200px] w-full lg:h-[250px]">
+              <img
+                src="assets/image/trainer/trainer (1).webp"
+                alt=""
+                class="trainerImage"
+              />
+              <div id="layerHitam" class="layerHitam"></div>
+            </div>
+
+            <div
+              class="flex flex-col gap-3 px-4 py-4 font-poppins text-textPrimaryColor"
+            >
+              <!-- Profile -->
+              <div>
+                <p class="text-sm font-medium text-textInactiveColor">
+                  Personal Trainer
+                </p>
+                <h3 class="text-xl font-semibold">Willian Jenson</h3>
+              </div>
+              <!-- Desc -->
+              <p class="text-sm text-textInactiveColor">
+                Professional trainer with customized training.
+              </p>
+              <!-- Harga -->
+              <div class="flex flex-row justify-between">
+                <a href="" class="text-sm lg:text-base">Learn More</a>
+                <p class="font-bold">$25</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="footer bg-biru grid w-full grid-cols-1 gap-16 lg:grid-cols-[30%_1fr]"
+    >
+      <div
+        class="flex w-full flex-col items-start justify-start gap-3 lg:w-full lg:gap-6"
+      >
+        <img src="assets/image/logo.png" class="w-fit" alt="" />
+
+        <div class="flex w-full flex-col items-start gap-2">
+          <h1 class="font-poppins text-xl text-white">
+            Are you finding a home?
+          </h1>
+          <div
+            class="flex w-full flex-row justify-between border-b border-b-white px-1 font-poppins"
+          >
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Email adress"
+              class="bg-biru w-full text-white placeholder-white outline-none"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#ffffff"
+                d="M18 7.05a1 1 0 0 0-1-1L9 6a1 1 0 0 0 0 2h5.56l-8.27 8.29a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L16 9.42V15a1 1 0 0 0 1 1a1 1 0 0 0 1-1Z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+        <div class="flex flex-col gap-4">
+          <h3 class="font-poppins text-2xl font-medium text-white">Explore</h3>
+          <ul class="flex flex-col gap-1 font-poppins text-lg text-white">
+            <li><a href="">About us</a></li>
+            <li><a href="">Terms of use</a></li>
+            <li><a href="">Pricing</a></li>
+            <li><a href="">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3 class="font-poppins text-2xl font-medium text-white">Links</h3>
+          <ul class="flex flex-col gap-1 font-poppins text-lg text-white">
+            <li><a href="">Service Details</a></li>
+            <li><a href="">Buying Property</a></li>
+            <li><a href="">Selling Property</a></li>
+            <li><a href="">Renting Property</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3 class="font-poppins text-2xl font-medium text-white">Contact</h3>
+          <ul class="flex flex-col gap-1 font-poppins text-lg text-white">
+            <li>+628153815451</li>
+            <li>@skyline@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-white lg:col-start-1 lg:col-end-3" />
+      <div class="m-auto lg:col-start-1 lg:col-end-3">
+        <p class="font-poppins text-white opacity-70">
+          © 2024 ALL RIGHT RESERVED.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Lenis -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Lenis Scroll -->
+    <script src="js/scroll.js"></script>
+    <!-- Swiper -->
+    <script src="js/swiper.js"></script>
+    <!-- GSAP -->
+    <script src="js/anim.js"></script>
+    <!-- Nav Control -->
+    <script src="js/navControl.js"></script>
+  </body>
+</html>
