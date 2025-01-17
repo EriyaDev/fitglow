@@ -52,25 +52,63 @@
 }
 
 .programBox {
-  @apply hover:bg-secondaryColorHover flex flex-col items-center justify-center gap-3 rounded-2xl border border-secondaryColor bg-secondaryColor p-4 text-center font-poppins duration-150 ease-in-out hover:border-textPrimaryColor;
+  @apply flex flex-col items-center justify-center gap-3 rounded-2xl border border-secondaryColor bg-secondaryColor p-4 text-center font-poppins duration-150 ease-in-out hover:border-textPrimaryColor hover:bg-secondaryColorHover;
 }
 
 .buttonProgramBox {
-  @apply border-textSecondaryColor text-textSecondaryColor items-center justify-center rounded-2xl border bg-none px-4 py-2 font-poppins font-medium duration-150 ease-out;
+  @apply items-center justify-center rounded-2xl border border-textSecondaryColor bg-none px-4 py-2 font-poppins font-medium text-textSecondaryColor duration-150 ease-out;
 }
 
 .trainerBox {
-  @apply rounded-3xl bg-secondaryColor;
+  @apply rounded-3xl bg-secondaryColor duration-150 ease-out hover:bg-secondaryColorHover;
 }
 
 .trainerImage {
   @apply absolute h-full w-full rounded-t-3xl object-cover;
 }
 
+ul li::marker {
+  color: #3e85ff;
+}
+
+#review .swiper-slide-active {
+  @apply scale-125 opacity-100 duration-150 ease-out !important;
+}
+
+#review .swiper-slide {
+  @apply py-10;
+}
+
+#trainerSwiperMobile .swiper-slide {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Untuk 2 kolom */
+  gap: 16px; /* Jarak antar elemen */
+}
+
+#trainerSwiperTablet .swiper-slide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Untuk 2 kolom */
+  gap: 16px; /* Jarak antar elemen */
+}
+
+.reviewBox {
+  @apply rounded-3xl bg-secondaryColor p-4 font-poppins text-textPrimaryColor opacity-50;
+}
+
 .layerHitam {
-  @apply absolute z-10 h-full w-full rounded-3xl bg-black opacity-40;
+  @apply absolute z-10 h-full w-full rounded-t-3xl bg-black opacity-40;
 }
 
 .footer {
   @apply px-5 py-10 md:px-16;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  background-color: #313131 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #fefefe !important;
 }
