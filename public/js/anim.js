@@ -89,6 +89,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
       duration: 1,
       stagger: 0.2,
     });
+
+    gsap.from(".animasiKeKiriStagger", {
+      scrollTrigger: {
+        trigger: ".animasiOpacity",
+        start: "top center", // Animation starts when top of element hits 80% of viewport
+        end: "bottom bottom",
+        toggleActions: "restart none none reverse",
+      },
+      opacity: 0,
+      x: 100,
+      ease: "power2.out",
+      duration: 1,
+      stagger: 0.1,
+    });
     gsap.from(".animasiOpacity", {
       scrollTrigger: {
         trigger: ".animasiOpacity",

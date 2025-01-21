@@ -52,7 +52,7 @@
 }
 
 .programBox {
-  @apply flex flex-col items-center justify-center gap-3 rounded-2xl border border-secondaryColor bg-secondaryColor p-4 text-center font-poppins duration-150 ease-in-out hover:border-textPrimaryColor hover:bg-secondaryColorHover;
+  @apply flex flex-col items-center justify-center gap-3 rounded-2xl border border-secondaryColor bg-secondaryColor p-4 text-center font-poppins duration-150 hover:border-textPrimaryColor hover:bg-secondaryColorHover;
 }
 
 .buttonProgramBox {

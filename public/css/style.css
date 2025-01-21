@@ -1170,7 +1170,6 @@ video {
   text-align: center;
   font-family: Poppins;
   transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .programBox:hover{
